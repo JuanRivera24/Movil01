@@ -1,34 +1,45 @@
-package com.app.users.domain;
+package com.app.services.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Barberos")
+@Table(name = "Servicios")
 @Data
-public class User {
+public class Services {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String nombre;
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String descripcion;
 
     @Column(nullable = false)
-    private String password;
+    private String precio;
+
+    @Column(nullable = false, unique = true)
+    private String tipo;
 
     // Empty constructor (required for JPA)
-    public User() {}
+    public Services() {
+    }
 
     // Constructor with parameters
-    public User(Long id, String name, String email, String password) {
+    public Services(Long id, String nombre, String descripcion, String precio, String tipo) {
         this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.tipo = tipo;
     }
 
     // Getters y Setters
@@ -40,27 +51,40 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDescripcion() {
+        return descripcion;
+
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public String getPassword() {
-        return this.password;
+    public String getPrecio() {
+        return precio;
+
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPrecio(String precio) {
+        this.precio = precio;
+
+    }
+
+    public String getTipo() {
+        return tipo;
+
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+
     }
 }
