@@ -1,34 +1,39 @@
-package com.app.users.domain;
+package com.app.appointments.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Barberos")
+@Table(name = "Citas")
 @Data
-public class User {
+public class Appointments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String precio;
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String fecha;
 
     @Column(nullable = false)
-    private String password;
+    private String hora;
 
     // Empty constructor (required for JPA)
-    public User() {}
+    public Appointments() {}
 
     // Constructor with parameters
-    public User(Long id, String name, String email, String password) {
+    public Appointments(Long id, String precio, String fecha, String hora) {
         this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
+        this.precio = precio;
+        this.fecha = fecha;
+        this.hora = hora;
     }
 
     // Getters y Setters
@@ -40,27 +45,27 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getPrecio() {
+        return precio;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
-    public String getEmail() {
-        return email;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public String getPassword() {
-        return this.password;
+    public String getHora() {
+        return hora;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 }
