@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Citas")
+@Table(name = "appointments")
 @Data
 public class Appointments {
     @Id
@@ -17,23 +17,23 @@ public class Appointments {
     private Long id;
 
     @Column(nullable = false)
-    private String precio;
+    private String price;
 
     @Column(nullable = false, unique = true)
-    private String fecha;
+    private String date;
 
     @Column(nullable = false)
-    private String hora;
+    private String hour;
 
     // Empty constructor (required for JPA)
     public Appointments() {}
 
     // Constructor with parameters
-    public Appointments(Long id, String precio, String fecha, String hora) {
+    public Appointments(Long id, String price, String date, String hour) {
         this.id = id;
-        this.precio = precio;
-        this.fecha = fecha;
-        this.hora = hora;
+        this.price = price;
+        this.date = date;
+        this.hour = hour;
     }
 
     // Getters y Setters
@@ -45,27 +45,27 @@ public class Appointments {
         this.id = id;
     }
 
-    public String getPrecio() {
-        return precio;
+    public String getPrice() {
+        return price;
     }
 
-    public void setPrecio(String precio) {
-        this.precio = precio;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getDate() {
+        return date;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getHora() {
-        return hora;
+    public String getHour() {
+        return hour;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setHour(String hour) {
+        this.hour = hour;
     }
 }
