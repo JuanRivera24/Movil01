@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Barberos")
+@Table(name = "Barbers")
 @Data
 public class Barbers {
     @Id
@@ -17,31 +17,30 @@ public class Barbers {
     private Long id;
 
     @Column(nullable = false)
-    private String nombre;
+    private String firstName;
 
     @Column(nullable = false, unique = true)
-    private String apellido;
+    private String lastName;
 
     @Column(nullable = false)
-    private String telefono;
+    private String phone;
 
-      @Column(nullable = false)
-    private String experiencia;
-
+    @Column(nullable = false)
+    private String experience;
 
     // Empty constructor (required for JPA)
     public Barbers() {}
 
     // Constructor with parameters
-    public Barbers(Long id, String nombre, String apellido, String telefono, String experiencia) {
+    public Barbers(Long id, String firstName, String lastName, String phone, String experience) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.experiencia = experiencia;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.experience = experience;
     }
 
-    // Getters y Setters
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -50,35 +49,35 @@ public class Barbers {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getTelefono() {
-        return this.telefono;
+    public String getPhone() {
+        return this.phone;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getExperiencia() {
-        return this.experiencia;
+    public String getExperience() {
+        return this.experience;
     }
 
-    public void setExperiencia(String experiencia) {
-        this.experiencia = experiencia;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 }

@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Clientes")
+@Table(name = "Customers")
 @Data
 public class Customers {
     @Id
@@ -17,30 +17,30 @@ public class Customers {
     private Long id;
 
     @Column(nullable = false)
-    private String nombre;
+    private String firstName;
 
     @Column(nullable = false, unique = true)
-    private String apellido;
+    private String lastName;
 
     @Column(nullable = false)
-    private String telefono;
+    private String phone;
 
     @Column(nullable = false)
-    private String fechaNacimiento;
+    private String birthDate;
 
     // Empty constructor (required for JPA)
     public Customers() {}
 
     // Constructor with parameters
-    public Customers(Long id, String nombre, String apellido, String telefono, String fechaNacimiento) {
+    public Customers(Long id, String firstName, String lastName, String phone, String birthDate) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.birthDate = birthDate;
     }
 
-    // Getters y Setters
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -49,35 +49,35 @@ public class Customers {
         this.id = id;
     }
 
-    public String getNombre () {
-        return nombre;
+    public String getFirstName () {
+        return firstName;
     }
 
-    public void setNombre (String nombre) {
-        this.nombre = nombre;
+    public void setFirstName (String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getApellido () {
-        return apellido;
+    public String getLastName () {
+        return lastName;
     }
 
-    public void setApellido (String apellido) {
-        this.apellido = apellido;
+    public void setLastName (String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getTelefono () {
-        return this.telefono;
+    public String getPhone () {
+        return this.phone;
     }
 
-    public void setTelefono (String telefono) {
-        this.telefono = telefono;
+    public void setPhone (String phone) {
+        this.phone = phone;
     }
 
-    public String getFechaNacimiento () {
-        return this.fechaNacimiento;
+    public String getBirthDate () {
+        return this.birthDate;
     }
 
-    public void setFechaNacimiento (String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setBirthDate (String birthDate) {
+        this.birthDate = birthDate;
     }
 }

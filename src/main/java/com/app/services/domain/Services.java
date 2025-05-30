@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Servicios")
+@Table(name = "Services")
 @Data
 public class Services {
 
@@ -18,31 +18,31 @@ public class Services {
     private Long id;
 
     @Column(nullable = false)
-    private String nombre;
+    private String name;
 
     @Column(nullable = false, unique = true)
-    private String descripcion;
+    private String description;
 
     @Column(nullable = false)
-    private String precio;
+    private String price;
 
     @Column(nullable = false, unique = true)
-    private String tipo;
+    private String type;
 
     // Empty constructor (required for JPA)
     public Services() {
     }
 
     // Constructor with parameters
-    public Services(Long id, String nombre, String descripcion, String precio, String tipo) {
+    public Services(Long id, String name, String description, String price, String type) {
         this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.tipo = tipo;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.type = type;
     }
 
-    // Getters y Setters
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -51,40 +51,35 @@ public class Services {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getPrecio() {
-        return precio;
-
+    public String getPrice() {
+        return price;
     }
 
-    public void setPrecio(String precio) {
-        this.precio = precio;
-
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getTipo() {
-        return tipo;
-
+    public String getType() {
+        return type;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-
+    public void setType(String type) {
+        this.type = type;
     }
 }

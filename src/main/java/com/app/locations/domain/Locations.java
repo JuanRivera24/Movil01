@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "Sedes")
+@Table(name = "Locations")
 @Data
 public class Locations {
     @Id
@@ -12,22 +12,22 @@ public class Locations {
     private Long id;
 
     @Column(nullable = false)
-    private String nombre;
+    private String name;
 
     @Column(nullable = false, unique = true)
-    private String direccion;
+    private String address;
 
     // Empty constructor (required for JPA)
     public Locations() {}
 
     // Constructor with parameters
-    public Locations(Long id, String nombre, String direccion) {
+    public Locations(Long id, String name, String address) {
         this.id = id;
-        this.nombre = nombre;
-        this.direccion = direccion;
+        this.name = name;
+        this.address = address;
     }
 
-    // Getters y Setters
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -36,19 +36,19 @@ public class Locations {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setAddress(String address) {
+        this.address = address;
     }       
 }
